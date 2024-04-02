@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Александр Симонов](https://up.htmlacademy.ru/javascript/31/user/1500497).
-* Наставник: [Дмитрий Беллавин](https://htmlacademy.ru/profile/bellavin)
+* Наставник: [Дмитрий Беллавин](https://htmlacademy.ru/profile/bellavin).
 
 ---
 
