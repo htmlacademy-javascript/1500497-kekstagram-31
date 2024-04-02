@@ -53,3 +53,4 @@ arrayOfStrNumbers.forEach((str, number) => {
   console.log(`${arrayOfStrNumbers[number]} : ${result}`);
 }
 );
+
