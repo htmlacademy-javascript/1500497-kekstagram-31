@@ -1,33 +1,29 @@
-function checkStrLength(EnterString, maxLenStr){ // Функция проверки длины строки
-  let result = EnterString.length <= maxLenStr ? true : false;
+function checkStrLength(enterString, maxLenStr){ // Функция проверки длины строки
+  let result = enterString.length <= maxLenStr ? true : false;
   return result;
 }
 
-function PalindromYesNo(myString){ // Функция для проверки, является ли строка палиндромом
+function PalindromYesNo(string){ // Функция для проверки, является ли строка палиндромом
   let reverseString = '';
-  for (let i = myString.length - 1; i >= 0; i--){
-    reverseString += myString[i];
+  for (let i = string.length - 1; i >= 0; i--){
+    reverseString += string[i];
   }
-  let result = reverseString === myString ? 'является палиндромом' : 'не является палиндромом';
+  let result = reverseString === string ? 'является палиндромом' : 'не является палиндромом';
   return result;
 }
 
-function numberSelection(ArrayElement) { // Функция извлечения цифр из строки
+function numberSelection(arrayElement) { // Функция извлечения цифр из строки
   let strNumber = '';
-  if (isNaN(ArrayElement) === false){
-    return ArrayElement;
-  }else{
-    for (let i = 0; i < ArrayElement.length; i++){
-      if (isNaN(parseInt(ArrayElement[i], 10)) === true){
-        continue;
-      }else if(parseInt(ArrayElement[i], 10) === true){
-        strNumber += toString(ArrayElement[i]);
-      }else{
-        strNumber += ArrayElement[i];
-      }
+
+  arrayElement = arrayElement.toString();
+
+  for (let i = 0; i < arrayElement.length; i++){
+    if (Number.isNaN(parseInt(arrayElement[i], 10)) === false){
+      strNumber += arrayElement[i]
     }
   }
-  let result = strNumber === '' ? NaN : strNumber;
+
+  const result = strNumber === '' ? NaN : strNumber;
   return result;
 }
 
