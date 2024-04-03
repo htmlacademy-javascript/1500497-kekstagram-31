@@ -1,8 +1,8 @@
-const NUMBERPHOTO = 25;
-const MINLIKES = 15;
-const MAXLIKES = 200;
-const MAXCOMMENTS = 30;
-const MAXAVATARNUMBER = 6;
+const NUMBER_PHOTO = 25;
+const MIN_LIKES = 15;
+const MAX_LIKES = 200;
+const MAX_COMMENTS = 30;
+const MAX_AVATAR_NUMBER = 6;
 const NAMES = [
   'Мелори',
   'Борис',
@@ -66,7 +66,7 @@ const searchRandomNumberRange = (min, max) => Math.floor(Math.random() * (max - 
 const getRandomElementArray = (array) => array[searchRandomNumberRange(0, array.length - 1)];
 
 // функция получения случайного id
-const generateUniqueID = (min, max) => {
+const generateUniqueId = (min, max) => {
   const usedId = [];
   return function () {
     let id = searchRandomNumberRange(min, max);
@@ -82,12 +82,12 @@ const generateUniqueID = (min, max) => {
 };
 
 
-const commentId = generateUniqueID(1, NUMBERPHOTO); // генератор, отвечающий за генерацию id скомментариев
+const commentId = generateUniqueId(1, NUMBER_PHOTO); // генератор, отвечающий за генерацию id скомментариев
 
 // функция создания комментария записи под фото
 const descriptionPhotoComment = () => ({
   id: commentId(),
-  avatar: `img/avatar-${searchRandomNumberRange(1, MAXAVATARNUMBER)}.svg`,
+  avatar: `img/avatar-${searchRandomNumberRange(1, MAX_AVATAR_NUMBER)}.svg`,
   message: getRandomElementArray(MESSAGES),
   name: getRandomElementArray(NAMES),
 });
@@ -95,28 +95,28 @@ const descriptionPhotoComment = () => ({
 // функция, отвечающая за создание массива объектов (комментариев)
 const createArrayObjects = () => {
   const arrayOfObjectsComments = [];
-  const numberComments = searchRandomNumberRange(1, MAXCOMMENTS);
+  const numberComments = searchRandomNumberRange(1, MAX_COMMENTS);
   for (let i = 0; i <= numberComments; i += 1){
     arrayOfObjectsComments.push(descriptionPhotoComment());
   }
   return arrayOfObjectsComments;
 };
 
-const PhotoId = generateUniqueID(1, NUMBERPHOTO); // генератор, отвечающий за генерацию id фотокарточек
+const photoId = generateUniqueId(1, NUMBER_PHOTO); // генератор, отвечающий за генерацию id фотокарточек
 
-const urlId = generateUniqueID(1, NUMBERPHOTO); // генератор, отвечающий за генерацию id url-ссылок
+const urlId = generateUniqueId(1, NUMBER_PHOTO); // генератор, отвечающий за генерацию id url-ссылок
 
 // функция, отвечающая за создания объекта - записи под фотокарточкой
 const createOnePhotoObject = () => ({
-  id: PhotoId(),
+  id: photoId(),
   url: `photos/${urlId()}.jpg`,
   description: getRandomElementArray(DESCRIPTIONS),
-  likes: searchRandomNumberRange(MINLIKES, MAXLIKES),
+  likes: searchRandomNumberRange(MIN_LIKES, MAX_LIKES),
   comments: createArrayObjects()
 });
 
 // функция, отвечающая за создания массива записей под фотокарточками
 const createManyPhotosPosts = () =>
-  Array.from({ length: NUMBERPHOTO }, createOnePhotoObject);
+  Array.from({ length: NUMBER_PHOTO }, createOnePhotoObject);
 
 console.log(createManyPhotosPosts());
