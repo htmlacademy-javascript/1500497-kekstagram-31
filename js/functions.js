@@ -1,5 +1,5 @@
 function checkStrLength(enterString, maxLenStr){ // Функция проверки длины строки
-  const result = enterString.length <= maxLenStr ? true : false;
+  const result = enterString.length <= maxLenStr;
   return result;
 }
 
@@ -8,7 +8,7 @@ function PalindromYesNo(string){ // Функция для проверки, яв
   for (let i = string.length - 1; i >= 0; i--){
     reverseString += string[i];
   }
-  let result = reverseString === string ? 'является палиндромом' : 'не является палиндромом';
+  const result = reverseString === string ? 'является палиндромом' : 'не является палиндромом';
   return result;
 }
 
@@ -34,7 +34,7 @@ const arrayOfStrNumbers = ['gbset464hj453', ' 2024 год',' ECMAScript 2022', '
 // console.log('Тестирование функции номер 1\n');
 // console.log('Изначальная строка: ', startStr);
 for (let i = 0; i <= 5; i++) {
-  console.log(checkStrLength(startStr, 18));
+  checkStrLength(startStr, 18);
   startStr += 'qw';
 }
 
@@ -42,7 +42,7 @@ for (let i = 0; i <= 5; i++) {
 // console.log('Набор тестируемых строк: ', arrayOfStrings);
 arrayOfStrings.forEach((str, number) => {
   const result = PalindromYesNo((str.replaceAll(' ','')).toLowerCase());
-  console.log(`Строка под номером ${number} ${result}`);
+  return(`Строка под номером ${number} ${result}`);
 }
 );
 
@@ -50,7 +50,7 @@ arrayOfStrings.forEach((str, number) => {
 // console.log('Набор тестируемых строк: ', arrayOfStrNumbers);
 arrayOfStrNumbers.forEach((str, number) => {
   const result = numberSelection(str);
-  console.log(`${arrayOfStrNumbers[number]} : ${result}`);
+  return (`${arrayOfStrNumbers[number]} : ${result}`);
 }
 );
 
