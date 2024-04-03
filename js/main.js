@@ -119,4 +119,4 @@ const createOnePhotoObject = () => ({
 const createManyPhotosPosts = () =>
   Array.from({ length: NUMBER_PHOTO }, createOnePhotoObject);
 
-console.log(createManyPhotosPosts());
+createManyPhotosPosts();
