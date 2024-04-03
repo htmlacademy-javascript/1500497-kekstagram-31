@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 81b065db629fd1c39080e3fc2e0a4f4644b861ef
 function checkStrLength(enterString, maxLenStr){ // Функция проверки длины строки
   const result = enterString.length <= maxLenStr;
   return result;
@@ -57,7 +53,3 @@ arrayOfStrNumbers.forEach((str, number) => {
   return (`${arrayOfStrNumbers[number]} : ${result}`);
 }
 );
-<<<<<<< HEAD
-=======
-
->>>>>>> 81b065db629fd1c39080e3fc2e0a4f4644b861ef
