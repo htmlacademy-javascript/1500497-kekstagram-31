@@ -3,6 +3,7 @@ const MIN_LIKES = 15;
 const MAX_LIKES = 200;
 const MAX_COMMENTS = 30;
 const MAX_AVATAR_NUMBER = 6;
+const MAX_ID_COMMENTS = 2000;
 const NAMES = [
   'Мелори',
   'Борис',
@@ -65,7 +66,7 @@ const searchRandomNumberRange = (min, max) => Math.floor(Math.random() * (max - 
 // функция получения случайного элемента массива по индексу
 const getRandomElementArray = (array) => array[searchRandomNumberRange(0, array.length - 1)];
 
-// функция получения случайного id
+// функция получения случайного неповторяющегося id
 const generateUniqueId = (min, max) => {
   const usedId = [];
   return function () {
@@ -82,7 +83,7 @@ const generateUniqueId = (min, max) => {
 };
 
 
-const commentId = generateUniqueId(1, NUMBER_PHOTO); // генератор, отвечающий за генерацию id скомментариев
+const commentId = generateUniqueId(1, MAX_ID_COMMENTS); // генератор, отвечающий за генерацию id комментариев
 
 // функция создания комментария записи под фото
 const descriptionPhotoComment = () => ({
